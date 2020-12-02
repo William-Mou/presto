@@ -1,0 +1,8 @@
+  File "./pipeline.py", line 30
+    print "Based on output of the last step, answer the following questions:"
+                                                                            ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Based on output of the last step, answer the following questions:")?
+
+real	0m0.047s
+user	0m0.036s
+sys	0m0.012s

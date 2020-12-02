@@ -13,16 +13,23 @@ define_macros = []
 undef_macros = []
 extra_compile_args = ["-DUSEFFTW"]
 include_dirs = [numpy.get_include()]
+include_dirs.append("/home/william/presto/opt/fftw3/include")
+include_dirs.append("/home/william/presto/opt/pgplot")
+include_dirs.append("/home/william/presto/opt/cfitsio-3/include")
+print(include_dirs)
 # For MacOS with MacPorts use the following
 # include_dirs.append("/opt/local/include")
 
 # Note:  you might need to add "gfortran" to the following list if 
 # you see errors relating to missing "g" functions....
-ppgplot_libraries = ["cpgplot", "pgplot", "X11", "png", "m"]
+ppgplot_libraries = ["cpgplot", "pgplot", "X11", "png", "m","gfortran"]
 ppgplot_library_dirs = ["/usr/X11R6/lib"]
 
 presto_libraries = ["presto", "fftw3f", "m"]
 presto_library_dirs = []
+presto_library_dirs.append("/home/william/presto/opt/fftw3/lib")
+presto_library_dirs.append("/home/william/presto/opt/pgplot")
+presto_library_dirs.append("/home/william/presto/opt/cfitsio-3/lib")
 
 ppgplot_include_dirs = include_dirs
 presto_include_dirs = include_dirs
