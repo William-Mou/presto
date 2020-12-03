@@ -22,7 +22,7 @@ endif
 # How to link with some needed libraries of PGPLOT
 X11LINK := $(shell pkg-config --libs x11)
 PNGLINK := $(shell pkg-config --libs libpng)
-PGPLOT_DIR=/home/william/presto/opt/pgplot
+PGPLOT_DIR=/home/william/presto/opt/pgplot1
 TEMPO=/home/william/presto/opt/tempo
 PRESTO=/home/william/presto/pkg/presto
 

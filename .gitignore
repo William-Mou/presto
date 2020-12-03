@@ -62,3 +62,10 @@ MANIFEST
 .venv*/
 dist/
 .mypy_cache/
+PRESTO_Data/TestData2/subbands
+PRESTO_Data/TestData1/subbands
+PRESTO_Data/TestData1/DDplan.ps
+PRESTO_Data/TestData1/pgplot.ps
+PRESTO_Data/TestData2/DDplan.ps
+PRESTO_Data/TestData1/log.pulsar_search
+PRESTO_Data/TestData2/log.pulsar_search

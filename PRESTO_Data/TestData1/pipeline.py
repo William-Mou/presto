@@ -6,8 +6,10 @@ Max-Plank Institute for Radio Astronomy
 zhuwwpku@gmail.com
 """
 import os, sys, glob, re
-import sifting
+from presto import sifting
 from commands import getoutput
+import glob
+from operator import itemgetter, attrgetter
 import numpy as np
 
 #Tutorial_Mode = True
@@ -20,7 +22,7 @@ Nint = 64 #64 sub integration
 Tres = 0.5 #ms
 zmax = 0
 
-filename = sys.argv[1]
+filename = "GBT_Lband_PSR.fil"
 if len(sys.argv) > 2:
     maskfile = sys.argv[2]
 else:
@@ -46,7 +48,7 @@ print('''
 #myfil = filterbank(filename)
 
 readheadercmd = 'readfile %s' % filename
-print(readheadercmd)
+print('readfile %s' % filename)
 output = getoutput(readheadercmd)
 print(output)
 header = {}
@@ -55,7 +57,7 @@ for line in output.split('\n'):
     if len(items) > 1:
         header[items[0].strip()] = items[1].strip()
 
-#print(header)
+print(header)
 #except:
     #print('failed at reading file %s.' % filename)
     #sys.exit(0)
@@ -274,7 +276,7 @@ def ACCEL_sift(zmax):
 
     # Write candidates to STDOUT
     if len(cands):
-        cands.sort(sifting.cmp_sigma)
+        cands.sort(key=attrgetter('sigma'), reverse=True)
         #for cand in cands[:1]:
             #print(cand.filename, cand.candnum, cand.p, cand.DMstr)
         #sifting.write_candlist(cands)
